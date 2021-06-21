@@ -1,6 +1,18 @@
 #ifndef SKIPLIST_CPP_MASTER_SKIPLIST_H
 #define SKIPLIST_CPP_MASTER_SKIPLIST_H
 
+#include "node.h"
+#include <iostream>
+#include <cstdlib>
+#include <cmath>
+#include <cstring>
+#include <mutex>
+#include <fstream>
+
+#define STORE_FILE "../storefile/dumpFile"
+std::mutex mtx;     // mutex for critical section
+std::string delimiter = ":";
+
 // 跳跃链表
 template <typename K, typename V>
 class SkipList
